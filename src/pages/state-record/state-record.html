@@ -1,0 +1,42 @@
+<!--
+  Generated template for the StateRecordPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>浏览/点赞记录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="bgcolor">
+    <div class="mytabs">
+        <ion-grid style="background:#fff" full>
+          <ion-row style="flex-wrap:nowrap;overflow:auto">
+            <ion-col col *ngFor="let item of tabs,let i = index" (click)="checktab(i)" class="text-center " [ngClass]="{true:'active',false:''}[item.isSelect]">
+              {{item.key}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+          <ion-list  no-lines *ngFor="let item  of recordList" class="mb3">
+              <ion-item   >
+                <ion-thumbnail item-start>
+                  <img src="{{item.Logo}}" onError="this.src='../../assets/icon/user.jpg'">
+                </ion-thumbnail>
+                <h2>{{item.UserName}}</h2>
+                <p><small>{{item.CreateTime}}</small></p>
+                <div item-end text-right *ngIf="item.BrowseQuantity">
+                  <p>浏览</p>
+                  <p> <small>{{item.BrowseQuantity}}</small></p>
+                </div>
+              </ion-item>
+            </ion-list>
+     
+<div style="padding:1px" *ngIf="recordList.length<1">
+  <p class="mt50 text-center color-8c">暂无相关记录</p>
+
+</div>
+</ion-content>

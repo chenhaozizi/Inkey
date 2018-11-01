@@ -1,0 +1,8 @@
+page-sharerecord {
+    .list > .item-block:last-child, .list > .item-wrapper:last-child .item-block{
+        border-top: none;
+    }
+    .list{margin-bottom: 3px}
+    .item ion-thumbnail img.myimg{width: 80px;height: 60px;}
+  
+}

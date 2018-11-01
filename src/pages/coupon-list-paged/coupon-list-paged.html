@@ -1,0 +1,33 @@
+<!--
+  Generated template for the CouponListPagedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar mode="ios">
+    <ion-title>优惠券列表</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="bgcolor">
+  <ion-list class="no-arrow pos-rel bgff mb5" style="display:flex;" *ngFor="let coup of coupons,let i = index" [navPush]="coupondetailpage" [navParams]="{'couponItem':coup}">
+      <button ion-item class=" border-none" style="width:80%">
+        
+        <div class="couponClass">
+          <div class="couTitle">{{coup.Title}}</div>
+          <div class="couContent" >￥{{coup.NominalValue}} &nbsp;<span class="couRule" *ngIf="coup.UseMinMoney!=null">{{coup.Describe}}</span><span class="couRule" *ngIf="coup.UseMinMoney==null">无门槛直接使用</span></div>
+          <div class="couTime">有效期:{{coup.StartTime}} 至 {{coup.EndTime}} </div>
+          <div class="remainingCount">仅剩： {{coup.Total-coup.ReceivedQuantity}} 张</div>
+        </div>
+        
+      </button>
+      <span  class="border-l pull-right sharebtn ">
+          <img class="mt15" src="../../assets/imgs/share.png">
+        </span>
+      
+    </ion-list>
+<p class="mt50 text-center color-8c" *ngIf="couponslen <= 0" >暂无相关信息</p>
+
+</ion-content>

@@ -1,0 +1,177 @@
+.text-center{text-align: center }
+.pull-right{position: absolute;right:1.6rem;}
+/*字体大小  */
+.font-xs{font-size: 10px !important}
+.font-sm{font-size: 12px !important}
+.font-md{font-size: 14px !important}
+.font-md2{font-size: 16px !important}
+.font-36{font-size: 18px !important}
+.font-22{font-size: 22px !important}
+.font-20{font-size: 20px !important}
+.font-bold{font-weight: bold !important}
+.font-32{font-size: 32px !important}
+.bgcolor{background-color: #f5f5f5 !important; }
+ $bgcolor :#f5f5f5 !important;
+.bgff{background: #fff !important}
+/*字体颜色  */
+.color-y{color: #FFB700 !important}
+.color-yellow{color: yellow !important}
+.color-r{color: #DC4A3D !important}
+.color-66{color:#555 !important}
+.color-00{color: #000 !important}
+.color-54{color:rgba(0,0,0,.54)}
+.color-ff{color: #fff !important}
+.color-28{color: #282828 !important}
+.color-ff6{color: rgba(255,255,255,.7)}
+.color-78{color: #787878 !important}
+.color-8c{color: #8c8c8c !important}
+.bgf{background: #fff !important}
+/*边线  */
+.border-t{border-top:1px solid #f2f2f2 !important}
+.border-b  .item-inner{border-bottom:0.55px solid rgba(0, 0, 0, 0.3)!important}
+.border-nt{border-top: 0 !important}
+.border-nb{border-bottom: 0 !important}
+.border-l{border-left:0.55px solid rgba(0, 0, 0, 0.3) !important}
+.border-r{border-right:0.55px solid rgba(0, 0, 0, 0.3) !important}
+.border-b-y{border-bottom:1px solid #ff5a1a }
+.border{border: 1px solid #f2f2f2}
+.radius{border-radius: 10rpx}
+.mb80{margin-bottom: 80px !important}
+
+/*定位  */
+.pos-rel{position: relative !important}
+.pos-ab{position: absolute !important}
+.inblock{display: inline !important;width: auto !important}
+/*padding  margin  */
+.pd10{padding: 10px}
+.pd20{padding: 20px}.pb0{padding-bottom:0 !important}.pt0{padding-top: 0 !important}
+.pt5{padding-top: 5px}
+.pb5{padding-bottom: 5px}
+.pt10{padding-top: 10px}
+.pb10{padding-bottom: 10px}
+.pb20{padding-bottom: 20px !important}
+.pl15{padding-left: 15px}
+.pl10{padding-left: 10px}.pl25{padding-left: 25px !important}
+.pr0{padding-right: 0 !important}
+.pl0{padding-left: 0 !important}
+.pl16{padding-left: 16px !important}
+.pr10{padding-right: 10px}.pd0{padding: 0 !important}.pr20{padding-right: 2px}.pb10{padding-bottom: 10px !important}
+.pt5{padding-top: 5px}
+.mt0{margin-top: 0 !important}
+.m10{margin: 10px !important}
+.mb0{margin-bottom: 0 !important}
+.mb1{margin-bottom: 1px !important}
+.mb10{margin-bottom: 10px !important}
+.mt15{margin-top: 15px !important}
+.mb3{margin-bottom: 3px !important}
+.mt8{margin-top: 8px}.mt6{margin-top: 6px}.mt20{margin-top: 20px !important}.mt50{margin-top: 50px !important}
+.mt5{margin-top:5px !important}.mb5{margin-bottom: 5px !important}.mt10{margin-top:10px !important}.mr10{margin-right: 10rpx}.mb5{margin-bottom: 5px}.mb10{margin-bottom: 10px}
+.mb15{margin-bottom: 15px !important}.mb20{margin-bottom: 20px}
+.mr20{margin-right: 20px !important}.mr25{margin-right: 25px !important}
+.mr10{margin-right: 10px}.mr5{margin-right: 5px !important}
+ /*按钮大小  */
+.btn-sm{padding: 3px 8px;display: inline-block;line-height: 22px;font-size:14px;border-color:#fff}
+.full-btn {width: 100%;border-radius: 0;border-color:#ff5a1a;font-size: 14px;height: 40rpx;line-height: 40px;margin: 0}
+.bottom-button{position: fixed;width: 100%; bottom: 0;font-size:14px;color:#000000;border-top: 1px solid #eee;height:40px;line-height: 40px;   }
+.fixbtn{position: fixed;bottom: 0px;width: 100%;padding: 10px 10%;background: #fff}
+/*按钮颜色  */
+.btn-y{background:#ff5a1a;color:#fff }
+
+/*定位距离  */
+.bt0{bottom:0} .r0{right:0}
+
+.text-left{text-align: left}.text-center{text-align: center}.text-right{text-align: right}
+/*浮动  */
+.float-l{float: left}.float-r{float: right}
+/*item 图标  */
+
+.containers{
+    background-color: #f5f5f9;
+    justify-content: initial;
+    display: block;
+}
+/*多余一行点点显示*/
+ .text-showell{    overflow: hidden !important;    text-overflow: ellipsis !important;    white-space: nowrap;}
+ /*超出两行点点显示*/
+.text-showell-two{white-space: pre-wrap !important;text-overflow: -o-ellipsis-lastline !important;overflow: hidden !important;text-overflow: ellipsis !important;display: -webkit-box !important;-webkit-line-clamp: 2 !important;-webkit-box-orient: vertical !important;}
+/*超出三行点点显示*/
+    .text-showell-four,.text-showell-four p{white-space: pre-wrap !important;text-overflow: -o-ellipsis-lastline !important;overflow: hidden !important;text-overflow: ellipsis !important;display: -webkit-box !important;-webkit-line-clamp: 4 !important;-webkit-box-orient: vertical !important;}
+
+       .arrow .item-inner {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2012%2020'><path%20d='M2,20l-2-2l8-8L0,2l2-2l10,10L2,20z'%20fill='%23c8c7cc'/></svg>");
+  padding-right: 32px;
+  background-position: right 14px center;
+  background-position: right calc(14px + constant(safe-area-inset-right)) center;
+  background-position: right calc(14px + env(safe-area-inset-right)) center;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+}
+.arrow .no-arrow .item-inner,.arrow .no-arrow .item-block.item-inner,.no-arrow .item-inner{background-image: none !important}
+.w80{width: 80% !important}
+// 分享按钮
+.sharebtn{width: 20%;height: calc(100% - 30px );text-align: center;vertical-align: middle;right: 0;top:15px;bottom: 15px;line-height: 66px}
+.mytabs .active{border-bottom: 1px solid #00bc71;color: #00bc71}
+.smallrow{height: 20px;ion-col[col-12] {display: inline-block;max-width: 35px;min-width:35px;padding: 0;text-align: center;    border: 1px solid #ccc;
+    border-radius: 7px;}}
+    
+[padding] h1:first-child,
+[padding] h2:first-child,
+[padding] h3:first-child,
+[padding] h4:first-child,
+[padding] h5:first-child,
+[padding] h6:first-child {
+  margin-top: -0.2rem !important;
+}
+.button-md{box-shadow: none !important}
+.item ion-avatar img.myimg{width: 80px;max-height:60px;height:60px;border-radius: 0}
+.item h2{font-size: 1.3rem !important} 
+.item p{font-size: 1.2rem !important}
+
+.searchbar-md .searchbar-input{padding: 3px 55px}
+.toolbar-title,.toolbar-title-ios{font-weight: normal !important}
+// 输入框
+.ion-label-sm{font-size: 1.2rem;}
+.cambox{display: inline-block;width: 48px;height: 48px;background: rgb(222, 222, 222);border-radius: 3px;position: relative;;img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}}
+.item-md.item-input.input-has-focus .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .list-md .item-input.input-has-focus:last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .list-md .item-input.input-has-focus:last-child .item-inner {
+    box-shadow: none;
+  }
+  
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
+    box-shadow: none;
+  }
+  
+  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+  .btn{width: 80%!important;margin-left: 10%!important;}

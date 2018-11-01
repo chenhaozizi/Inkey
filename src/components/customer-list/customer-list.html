@@ -1,0 +1,31 @@
+<!-- Generated template for the CustomerListComponent component -->
+
+
+
+
+<button  *ngFor="let item of cusar,let i = index" ion-item class="border-none" [navPush]="cusdetailPage" [navParams]="{'id':item.CustomerId || item.Id}" >
+  <ion-avatar item-left>
+    <img class="" src="{{item.Logo}}" onError="this.src='../../assets/icon/user.jpg'" />
+  </ion-avatar>
+  <h2 class="color-403 font-md">{{item.Name}}</h2>
+  <p class="color-8c font-xs" > {{item.SalesUserName}} · 
+    <span *ngIf="parentPage=='customers'&&showType==0||parentPage=='customer'">  {{item.CreateTime}}</span>
+    <span *ngIf="(parentPage=='customers'&&showType==1)||!parentPage">逛店量:{{item.BrowseQuantity}}</span>
+    <span *ngIf="parentPage=='customers'&&showType==2">转发量:{{item.Transmit}}</span>
+    <span *ngIf="parentPage=='customers'&&showType==3">带客量:{{item.ChildCustomerQuantity}}</span>
+  </p>
+  <ion-grid class="inblock text-right pr0" item-right>
+    <ion-row>
+      <ion-col class="pb0 color-8c font-sm pr0 " col-12>{{item.lasettime}}</ion-col>
+    </ion-row>
+    <ion-row class="pos-rel smallrow">
+      <ion-col col-12 class="color-8c font-sm pd3 pr0 pos-ab r0">  <small *ngIf="item.IsOrderClient"><ion-icon name='star' color="red"></ion-icon></small><small *ngIf="item.Grade"><ion-icon name='star' class="color-y"></ion-icon></small></ion-col>
+    </ion-row>
+  </ion-grid>
+</button>
+<p padding class="mt0 text-center color-8c  mb5 bgff" *ngIf="cusar.length <= 0">暂无相关信息</p>
+
+
+
+
+

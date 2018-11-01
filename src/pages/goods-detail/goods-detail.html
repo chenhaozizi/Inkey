@@ -1,0 +1,47 @@
+<!--
+  Generated template for the GoodsDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>商品详情</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bgcolor">
+  <ion-list>
+    <div id='cavs'>
+      <div class="bgff mb10">
+        <img class="topimg" src="{{ip_src+detail.GoodsImg}}">
+        <h2 class="font-md color-403 mt20" style="padding-left:16px">
+          <!-- <span *ngIf="isCollage" class="border font-xs" style="border-color:#00bc71;color:#00bc71;padding:2px">拼团</span>-->
+          {{detail.GoodName}}</h2> 
+        <div class="font-md color-403 mt0 pb10" style="padding-left:16px">
+          {{detail.SpecDes}}
+          </div>
+          <ion-item class=" mancolor  font-sm  mb1 mt5 border-none " style="width:100%">
+            ￥<span class="font-36">{{detail.Price}}</span>
+            <span class="pull-right   color-8c font-sm">已售：{{detail.SalesCount}}</span>
+          </ion-item>
+        </div>
+        <div class="bgff">
+          <div padding class="font-md color-403 mt0 pb10">
+            {{detail.SotreName}}
+          </div>
+          <p padding class=" color-8c  font-md pb10 mt0 pt0" style="width:100%">
+            {{detail.StoreAddress}}
+          </p>
+        </div>
+        <div *ngIf="ifshow" class="text-center  pd10 mb80" style="border-top:1px solid #b7a5a5">
+          <img src="{{wxcode}}" />
+        </div>
+      </div>
+  </ion-list>
+  <div class="fixbtn">
+    <button ion-button round full (click)="share($event,detail.GoodsId)" color='maincolor'>
+      <ion-icon name="copy"></ion-icon>&nbsp;&nbsp;分享
+    </button>
+  </div>
+</ion-content>

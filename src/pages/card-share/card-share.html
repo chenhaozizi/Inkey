@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="share()">
+        <small>分享</small>
+        <ion-icon name="share-alt"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content  class="bgcolor">
+  <div id='imgTable'>
+  <img src="{{imgSrc}}" alt="" width='100%' onError="this.src='../../assets/icon/erwm.png'">
+  <ion-item no-lines>
+    <ion-avatar item-left>
+      <img src='{{userInfo.Logo}}' onError="this.src='../../assets/icon/user.jpg'">
+    </ion-avatar>
+    <h2>{{userInfo.Name}}</h2>
+    <p>{{userInfo.CompanyName}}</p>
+    <ion-thumbnail item-right>
+      <img src="{{userInfo.WxQRCode}}" alt="二维码" onError="this.src='../../assets/icon/ewm1.jpg'" class='wx'>
+    </ion-thumbnail>
+  </ion-item>
+</div>
+</ion-content>

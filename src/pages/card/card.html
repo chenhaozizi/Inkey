@@ -1,0 +1,45 @@
+<!--
+  Generated template for the RankPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header no-border>
+
+  <ion-navbar color="top" mode="ios">
+    <ion-title border-nb>名片</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <ion-card id='mainTable'>
+      <img class="useImg" src="{{userInfo.Logo}}" onError="this.src='../../assets/icon/user.jpg'" />
+      <img src='{{userInfo.WxQRCode}}' onError="this.src='../../assets/icon/ewm.jpg'" class='wx' />
+      <ion-item class="infom">
+        <h2 class="useName">
+          {{userInfo.Name}}
+          <small *ngIf="userInfo.UserType==0">导购</small>
+          <small *ngIf="userInfo.UserType==1">店长</small>
+        </h2>
+        <p>手机:{{userInfo.Phone || '暂无'}}</p>
+        <p>{{userInfo.CompanyName}}</p>
+        <p class="addr">{{userInfo.Address}}</p>
+      </ion-item>
+      <ion-row *ngIf="ifshow">
+        <button ion-button color="maincolor" outline small (click)="avatarChoice()">
+          <div>制作海报名片</div>
+        </button>
+      </ion-row>
+    </ion-card>
+  </div>
+  <div class="fixbtn">
+    <button ion-button round full (click)="share()" color='maincolor'>
+      <ion-icon name="copy"></ion-icon>&nbsp;&nbsp;分享
+    </button>
+  </div>
+  <div id="copy">
+
+  </div>
+</ion-content>

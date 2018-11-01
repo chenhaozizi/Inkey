@@ -1,0 +1,37 @@
+<!--
+  Generated template for the MsgInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>通知详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<!-- 类型为1 是通知 -->
+<ion-content class="bgcolor">
+  <ion-card *ngIf="item.MessageType==1">
+    <ion-card-header text-center>
+      <b> {{item.Message}}</b>
+    </ion-card-header>
+    <ion-card-content [innerHTML]="assembleHTML(item.Content)"></ion-card-content>
+    <ion-item>
+      <span item-end> <small>{{item.CreateTime}}</small></span>
+    </ion-item>
+  </ion-card>
+  <!-- 类型为2  是消息 -->
+  <ion-card *ngIf="item.MessageType!==1 ">
+    <!-- <ion-card-header text-center>
+      <b>消息内容：</b>
+    </ion-card-header> -->
+    <ion-card-content>
+      {{item.Message}}
+    </ion-card-content>
+    <ion-item>
+      <span item-end> <small>{{item.CreateTime}}</small></span>
+    </ion-item>
+  </ion-card>
+</ion-content>

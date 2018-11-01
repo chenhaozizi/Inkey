@@ -1,0 +1,11 @@
+page-coupon-list-paged {
+    .couTitle{color:black}
+    .couContent{color: red;font-size: 2.5rem}
+    .couRule{color:goldenrod;font-size: 0.5rem}
+    .couTime{color: gray;font-size: 0.4rem}
+    .btnGetCou{background-color: gold;border-radius: 2px;display: flex}
+    .btnRece{color: wheat;display: flex;flex-direction: column}
+    .btnLq{color:white;font-size: 2rem;text-align: center}
+    .remainingCount{font-size: 0.5rem;color: goldenrod}
+    .border-none .item-inner{border: none !important}
+}

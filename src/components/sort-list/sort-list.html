@@ -1,0 +1,82 @@
+<!-- 导购 -->
+<!-- <ion-content> -->
+<ion-list class="border-none" *ngIf="prankingType !== 3&&(state=='0'||state=='1')">
+  <button *ngFor="let item of cusarr,let i = index " ion-item class="border-none no-arrow">
+    <ion-avatar item-left>
+      <img class="" src="{{ip_src+ item.Logo}}" onError="this.src='../../assets/imgs/header2.jpg'" />
+    </ion-avatar>
+    <h2 [ngClass]="{'color-403':true,'font-md':true,'self':userInfo.Id==item.SalesUserId}">{{item.UserName}} <small
+        *ngIf='userInfo.Id==item.SalesUserId'>(我)</small></h2>
+    <p class="color-8c font-xs">{{item.StoreName}}</p>
+    <ion-grid class="inblock text-right pr0" item-right>
+      <ion-row>
+        <ion-col class="pb0 color-8c font-sm pr0 " col-12></ion-col>
+      </ion-row>
+      <ion-row class="pos-rel smallrow">
+        <ion-col col-12 class="color-8c font-sm pd3 pr0 pos-ab r0" *ngIf="prankingType==2">人气访问量:<b>{{item.Popularity}}</b></ion-col>
+        <ion-col col-12 class="color-8c font-sm pd3 pr0 pos-ab r0" *ngIf="prankingType==4">新增顾客数:<b>{{item.CustomerSoaring}}</b></ion-col>
+        <ion-col col-12 class="color-8c font-sm pd3 pr0 pos-ab r0" *ngIf="prankingType==5">分享次数:<b>{{item.Share}}</b></ion-col>
+      </ion-row>
+    </ion-grid>
+  </button>
+</ion-list>
+<!-- 门店 -->
+<ion-list class="border-none" *ngIf="state=='2'">
+  <button *ngFor="let item of cusarr,let i = index" ion-item class="border-none no-arrow">
+    <ion-thumbnail item-left *ngIf="prankingType !== 3">
+      <img class="myimg" src="{{ip_src+ item.Logo}}" onError="this.src='../../assets/imgs/shop01.jpg'" class='myimg' />
+    </ion-thumbnail>
+    <h2 [ngClass]="{'color-403':true,'font-md':true,'self':userInfo.CompanyId==item.StoreId}">{{item.StoreName||item.Name}}
+      <small *ngIf='userInfo.CompanyId==item.StoreId'>(本店)</small></h2>
+    <!-- <p class="color-8c font-xs">{{item.addr}}</p> -->
+    <ion-grid class="inblock text-right pr0" item-right>
+      <ion-row class="pos-rel smallrow">
+        <p *ngIf="prankingType==2">人气访问量:<b>{{item.Popularity}}</b></p>
+        <p *ngIf="prankingType==3">浏览次数:<b>{{item.BrowseCount}}</b></p>
+        <p *ngIf="prankingType==4">新增顾客数:<b>{{item.CustomerSoaring}}</b></p>
+        <p *ngIf="prankingType==5">分享次数:<b>{{item.Share}}</b></p>
+      </ion-row>
+    </ion-grid>
+  </button>
+</ion-list>
+<!-- 商品排名 -->
+<ion-list class="border-none" *ngIf="prankingType == 3&&state!==2">
+  <button *ngFor="let item of cusarr,let i = index " ion-item class="border-none no-arrow">
+    <ion-thumbnail item-left>
+      <img class="myimg" src="{{ip_src+ item.GoodsImg}}" onError="this.src='../../assets/imgs/h5.jpg'" />
+    </ion-thumbnail>
+    <h2 [ngClass]="{'color-403':true,'font-md':true}">{{item.GoodName}}</h2>
+    <p class="color-8c font-xs">{{item.SpecDes}}</p>
+    <!-- <ion-grid class="inblock text-right pr0" item-right>
+      <ion-row>
+        <ion-col class="pb0 color-8c font-sm pr0 " style="width:50px" col-12>浏览:<b style="color: #00bc71">{{item.BrowseCount}}</b></ion-col>
+      </ion-row>
+      <ion-row class="pos-rel smallrow">
+        <ion-col col-12 class="color-8c font-sm pd3 pr0 pos-ab r0" style="width:50px">¥<b >{{item.Price}}</b></ion-col>
+      </ion-row>
+    </ion-grid> -->
+    <div item-end text-right class="mr25">
+        <p>浏览:<b style="color: #00bc71">{{item.BrowseCount}}</b></p>
+        <p> ¥{{item.Price}}</p>
+      </div>
+  </button>
+</ion-list>
+<ion-card *ngIf="cusarr.length==0" >
+  <ion-card-content>
+    <p class="mt0 text-center color-8c  mb5 bgff" >暂无相关消息。</p>
+  </ion-card-content>
+</ion-card>
+
+<!-- 下拉刷新 -->
+<p class=" text-center color-8c" *ngIf="hasmore">没有更多了</p>
+<!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+ <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="">
+ </ion-refresher-content>
+ <ion-refresher-content>
+ </ion-refresher-content>
+</ion-refresher>
+上拉刷新 -->
+<!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+ <ion-infinite-scroll-content loadingSpinner="circles" loadingText="数据加载中..."></ion-infinite-scroll-content>
+</ion-infinite-scroll> --> 
+<!-- </ion-content> -->

@@ -1,0 +1,75 @@
+<!--
+  Generated template for the ShareinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar mode="ios">
+    <ion-title>盈客圈详情</ion-title>
+    <ion-buttons end [navPush]='stateRecordPage' [navParams]='{"id":id,type:0}'>
+      <button ion-button >
+        <small>记录</small>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bgcolor">
+  <div id="mainTable" class="bgcl" style="margin-bottom:100px">
+    <div padding>
+      <h3 class="mt5">{{cont.Title}}</h3>
+      <ion-list>
+        <ion-item class="author" nolines>
+          <ion-avatar item-left>
+            <img  src="{{ip_src+cont.CreateUserLogo}}" onError=" this.src='../../assets/imgs/header2.jpg' "   >
+          </ion-avatar>
+          <h2 style="margin-top:5px !important">{{cont.CreateUserName}}</h2>
+          <p>{{cont.CreateUserType}}</p>
+        </ion-item>
+      </ion-list>
+      <ion-list class="mb0">
+        <div class="pmain_text" [innerHTML]="assembleHTML(cont.Content)"></div>
+      </ion-list>
+    </div>
+    <!-- 个人二维码 -->
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col text-left class="font-sm" style="padding-left:16px;">
+          <p class="mt0">导购员：{{cont.CreateUserName}}</p>
+          <p >店铺名字：{{cont.StoreName}}</p>
+          <p>联系方式：{{cont.CreateUserPhone}}</p>
+        </ion-col>
+        <ion-col text-center *ngIf="cont.CreateUserQRCode">
+          <!-- <ion-item text-center no-lines class="pl0 mb10" > -->
+          <img  src="{{cont.CreateUserQRCode}}"  style="height:72px" />
+          
+          <!-- </ion-item> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+<p text-center > <ion-icon  name="thumbs-up" class="font-32" color="primary" *ngIf="cont.IsLike" ></ion-icon><ion-icon *ngIf="!cont.IsLike" (click)='like()' style="color:#807f84"  name="ios-thumbs-up" class="font-32" ></ion-icon></p>
+    <ion-list  text-center class="mb0 mt10 font-sm date" color="primary">
+      <ion-row>
+        <ion-col [navPush]='stateRecordPage' [navParams]='{"id":id,type:0}'>
+          <ion-icon class="font-sm" style="color:#807f84" name="thumbs-up" > {{cont.LikeCount}}人点赞</ion-icon>
+        </ion-col>
+        <ion-col [navPush]='stateRecordPage' [navParams]='{"id":id,type:1}' style="color:#807f84">{{cont.BrowseQuantity}}人浏览 </ion-col>
+        <ion-col class="note" style="color:#807f84">{{cont.CreateTime}}</ion-col>
+      </ion-row>
+    </ion-list>
+    <div *ngIf="ifshow" class="text-center border-t  pd10 mb80" >
+        <img src="{{wxcode}}" />
+      </div>
+    
+  </div>
+
+  
+  
+  <div class="fixbtn">
+      <button ion-button round full (click)="share($event,cont.Id)" color='maincolor'>
+          <ion-icon name="copy"></ion-icon>&nbsp;&nbsp;分享
+        </button>
+  </div>
+</ion-content>

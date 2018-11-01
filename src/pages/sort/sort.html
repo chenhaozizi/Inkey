@@ -1,0 +1,35 @@
+<!--
+  Generated template for the SortPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header no-border>
+  <ion-navbar mode="ios">
+    <ion-title>排行榜</ion-title>
+  
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <!-- <button ion-item  [navPush]="SortinfoPage" [navParams]="{'title':'销售TOP排行榜','unit':'热度:'}">
+      <img item-left src="../../assets/imgs/hot_1.png">
+      <h2 class="font-md2">销售TOP排行榜</h2>
+    </button> -->
+    <button ion-item [navPush]="SortinfoPage" [navParams]="{'title':'访问人气排行榜','unit':'访问量','prankingType':2}">
+      <img item-left src="../../assets/imgs/see.png">
+      <h2 class="font-md2">访问人气排行榜</h2>
+    </button>
+    <button ion-item [navPush]="SortinfoPage" [navParams]="{'title':'商品排行榜','unit':'销售量:','prankingType':3}">
+      <img item-left src="../../assets/imgs/actoven.png">
+      <h2 class="font-md2">商品排行榜</h2>
+    </button>
+    <button ion-item [navPush]="SortinfoPage" [navParams]="{'title':'顾客总数飙升榜','unit':'顾客数:','prankingType':4}">
+      <img item-left src="../../assets/imgs/hot_1.png">
+      <h2 class="font-md2">顾客总数飙升榜</h2>
+    </button>
+    <button ion-item [navPush]="SortinfoPage" [navParams]="{'title':'盈客分享榜','unit':'分享量:','prankingType':5}">
+      <img item-left src="../../assets/imgs/sharen.png">
+      <h2 class="font-md2">盈客分享榜</h2>
+    </button>
+</ion-content>

@@ -1,0 +1,25 @@
+page-about-app {
+    .version{bottom: 13vh;position: absolute;color: #fff}
+    .item{background: transparent;
+     p{
+         margin-top: 8px
+     }
+    }
+    .logobox{margin-top: 15vh}
+    .item.item-block .item-inner {border-bottom: none;}
+    .logo{width: 25vh;margin-left: calc(100% -25vh) / 2}
+    .label{display: flex;justify-content: space-between;align-items: center;flex-direction: column}
+    .fot{position: flex;bottom: 10px;background: white}
+    ion-content {
+        text-align: center;
+        background: url(../../assets/imgs/bg.png) no-repeat center;
+        background-size: 100% 100%;
+    }
+    .appInfo{
+        position: absolute;
+        bottom:5vh;color:gray;
+        text-align: left;
+        padding: 0 10px
+    }
+
+}

@@ -1,0 +1,62 @@
+<!--
+  Generated template for the ChangePwdPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bgcolor">
+  <!-- 修改密码 -->
+  <div *ngIf="!ifuptel">
+  <ion-list>
+    <ion-item>
+      <ion-label><small>手机号：</small></ion-label>
+      <ion-input type="tel" disabled="true"  required [(ngModel)]="phone" clearInput> </ion-input>
+    </ion-item>
+    <div class="pos-rel">
+      <ion-item>
+        <ion-label><small>验证码：</small></ion-label>
+        <ion-input type="tel" placeholder="请输入验证码" [(ngModel)]="yzm"></ion-input>
+      </ion-item>
+      <span [ngClass]="{'unusable': isShowTimeOut,'pull-right':true,' yzm':true}" (click)="getYzm()" clearInput>
+        获取验证码<span *ngIf="isShowTimeOut">{{tim}}</span></span>
+    </div>
+    <ion-item>
+      <ion-label><small>新密码：</small></ion-label>
+      <ion-input type="password" placeholder="请输入新密码" [(ngModel)]="password" clearInput></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="maincolor" class="btn" (click)="changePwd()">确认修改</button>
+</div>
+<!-- 修改电话号码 -->
+<div *ngIf="ifuptel">
+    <ion-list>
+      <ion-item>
+        <ion-label><small>旧手机号：</small></ion-label>
+        <ion-input type="tel" disabled='true' placeholder="请输入旧手机号" required [(ngModel)]="oldphone" clearInput> </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label><small>新手机号：</small></ion-label>
+          <ion-input type="tel" placeholder="请输入新手机号" [(ngModel)]="newphone" clearInput></ion-input>
+        </ion-item>
+      <div class="pos-rel">
+        <ion-item>
+          <ion-label><small>验&ensp;证&ensp;码：</small></ion-label>
+          <ion-input type="tel" placeholder="请输入验证码" [(ngModel)]="yzm"></ion-input>
+        </ion-item>
+        <span [ngClass]="{'unusable': isShowTimeOut,'pull-right':true,' yzm':true}" (click)="getYzm()" clearInput>
+          获取验证码<span *ngIf="isShowTimeOut">{{tim}}</span></span>
+      </div>
+    
+    </ion-list>
+    <button ion-button color="maincolor" class="btn" (click)="changeTel()">确认修改</button>
+  </div>
+</ion-content>

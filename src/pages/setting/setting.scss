@@ -1,0 +1,23 @@
+page-setting {
+
+  .toolbar-title-md{
+    text-align: center;
+  }
+
+  .scroll-content{
+    overflow: hidden;
+  }
+  .top-list{
+    margin-top: 15px;
+  }
+  .list{margin-bottom: 6px;}
+  .list > .item-block:first-child ,.list > .item-block:last-child{
+    border: none;
+}
+  .uerImg{width: 50px!important;height: 50px!important;border-radius: 50%!important;margin: 0 auto}
+  .user{padding:{
+    top:15px;
+    bottom: 15px;
+  }}
+}
+

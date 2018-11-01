@@ -1,0 +1,29 @@
+page-change-pwd {
+    .list {
+        margin-top: 10px
+    }
+    .list>.item-block:last-child,
+    .list>.item-wrapper:last-child .item-block {
+        border: none;
+    }
+    .list>.item-block:first-child,
+    .list>.item-wrapper:first-child.item-block {
+        border: none;
+    }
+    .btn {
+        display: inline-block;
+        width: 80%;
+        margin-left: 10%
+    }
+    .yzm {
+        display: inline-block;
+        top: 0;
+        height: 100%;
+        color: $maincolor;
+        line-height: 3.5rem;
+    }
+    .unusable{
+        color: #666!important;
+    }
+    .input-ios[clearInput] .text-input,.text-input-ios{font-size: 12px}
+}

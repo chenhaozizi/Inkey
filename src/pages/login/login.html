@@ -1,0 +1,33 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="text-align: center;overflow: hidden" >
+  <div class="logo"><img src="../../assets/imgs/logo.png" alt=""></div>
+  <ion-item style="width:85%">
+    <ion-label>
+      <ion-icon  name="ios-person-outline" alien="center"></ion-icon>
+    </ion-label>
+    
+    
+    <ion-input type="text" placeholder="请输入账号" #username></ion-input>
+  </ion-item>
+  <ion-item style="width:85%">
+    <ion-label>
+      <ion-icon name="ios-lock-outline"></ion-icon>
+    </ion-label>
+    <ion-input autocomplete="off" type="password" placeholder="请输入密码" #password></ion-input>
+  </ion-item>
+  <!-- <ion-item no-lines>
+    <label item-right>记住密码</label>
+    <ion-toggle></ion-toggle>
+  </ion-item> -->
+  <div style="text-align: center; margin-left: 30px; margin-right: 30px;width:85%">
+    <button ion-button button-large block class="loginBtn" color="login" (click)="logIn(username,password)">登录</button>
+  </div>
+  <ion-item class="fooer" style="width:85%"> 
+    <span style="font-weight:200;color: #e6e6e1"  [navPush]="changePwdPage">忘记密码？</span>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header no-border>
+    <ion-navbar mode="ios">
+        <ion-title>个人中心</ion-title>
+        <ion-buttons end (click)="logOut()">
+            <button ion-button style="font-size:1.5rem">退出登录</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bgcolor">
+    <ion-list>
+        <ion-item class="user">
+            <ion-avatar item-left>
+                <img src="{{user.Logo}}"  onError="this.src='../../assets/icon/user.jpg'" />
+            </ion-avatar>
+            <h2 style="min-height:15px">{{user.Name}}</h2>
+            <p> <small>登录账号:{{user.LoginName}}</small></p>
+            <ion-buttons item-end [navPush]="ChangeUserNamePage" [navParams]="{'name':user.Name,'id':user.Id}">
+                <button ion-button outline color="maincolor" small>
+                    改名
+                </button>
+            </ion-buttons>
+        </ion-item>
+    </ion-list>
+    <ion-list class="arrow">
+        <button ion-item class="no-arrow" [navPush]="mywechatPage" >
+            <ion-icon name="chatbubbles" item-left color="wechat"></ion-icon>
+            <h2>我的微信号</h2>
+            <ion-icon name="barcode" item-right color="wechat"></ion-icon>
+        </button>
+        <button ion-item [navPush]="ChangePwdPage" [navParams]="{tel:1}">
+                <ion-icon name="call" item-left color="maincolor"></ion-icon>
+                <h2>修改电话号码</h2>
+            </button>
+        <button ion-item [navPush]="ChangePwdPage" [navParams]="{tel:0}">
+            <ion-icon name="unlock" item-left color="maincolor"></ion-icon>
+            <h2>修改密码</h2>
+        </button>
+        <button ion-item [navPush]="setpage">
+            <ion-icon name="settings" item-left color="maincolor"></ion-icon>
+            <h2>设置</h2>
+        </button>
+        <button ion-item [navPush]="AboutAppPage">
+            <ion-icon name="alert" item-left color="maincolor"></ion-icon>
+            <h2>关于软件</h2>
+        </button>
+    </ion-list>
+
+</ion-content>

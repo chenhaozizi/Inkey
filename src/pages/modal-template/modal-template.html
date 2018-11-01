@@ -1,0 +1,74 @@
+<!--
+  Generated template for the ModalTemplatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar mode='ios'>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end (click)="cancel()">
+      <button ion-button style="font-size:1.5rem">取消</button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+<!-- 新增自然到店顾客 -->
+<ion-content class="bgcolor">
+  <ion-list>
+    <!-- <ion-item text-center>
+      <img src="{{url}}" style="width:30%!important" />
+    </ion-item> -->
+    <ion-item>
+      <ion-label fix>姓名：</ion-label>
+      <ion-input type="text" [(ngModel)]="oldName" value='{{oldName}}'></ion-input>
+    </ion-item>
+    <ion-item class="b-b">
+      <ion-label fix>电话：</ion-label>
+      <ion-input type="tel" [(ngModel)]="oldphone"  value='{{oldphone}}'></ion-input>
+    </ion-item>
+    <ion-list radio-group [(ngModel)]="sex" class="mb0 bgff">
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col col-3 no-lines>
+            <ion-item no-lines class="mt1">
+              <ion-label fix>性别：</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col col-4>
+            <ion-item no-lines class="pl0 mt1">
+              <ion-label>男</ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col col-4>
+            <ion-item no-lines class="mt1">
+              <ion-radio value="2"></ion-radio>
+              <ion-label>女</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <ion-item class="bo-t" *ngIf="type==2">
+      <ion-label fix>是否是老顾客：</ion-label>
+      <ion-toggle [(ngModel)]="IsOrderClient"></ion-toggle>
+    </ion-item>
+    <ion-item   [ngClass]="{'bo-t': type==1}">
+      <ion-label fix>是否是意向顾客：</ion-label>
+      <ion-toggle [(ngModel)]="Grade"></ion-toggle>
+    </ion-item>
+    <ion-item no-line class="arrow" *ngIf="type==1">
+      <ion-label>生日：</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD"  [(ngModel)]="birthday" cancelText="取消" doneText="确认"></ion-datetime>
+    </ion-item>
+    <ion-item no-lines class="boerder-none">
+      <ion-label fix>备注：</ion-label>
+      <ion-textarea style="min-height:80px" placeholder="说点什么。。。" type="text" [(ngModel)]="oldRemark" value='{{oldRemark}}'></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="maincolor" class="btn" (click)="dismiss()">确认</button>
+</ion-content>

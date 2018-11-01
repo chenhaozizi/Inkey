@@ -1,0 +1,48 @@
+page-addactive {
+.mb0 ion-label{ margin-top: 0 !important;margin-bottom: 0 !important  }
+
+.lin50{line-height: 50px}
+ion-item.item-input.input-has-focus.child-b .item-inner,ion-item.item-input.input-has-focus.child-b .item-inner{border-bottom: 1px solid #dedede !important}
+.child-n .item-inner{border-bottom: none !important}
+ion-item.item-textarea{border-bottom: 1px solid #dedede !important;}
+ion-item.item-textarea textarea{min-height: 150px}
+ion-item.item-textarea,.input-has-focus ,.item-input-has-focus{border-color: #dedede !important}
+.myp-input{padding-left: 20px;ion-input{display: inline-block;width: calc(100% - 16px - 16px)}ion-icon{color: #b9b8b8}}
+.datetime-text{margin-right: 20px}
+.imglist div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 70px;
+    width: 70px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto;
+    border: 0.5px solid #d8cfcf;
+    font-size: 40px;
+    // .ts{
+    //     align-self: flex-end;
+    //     font-size: 10px;
+    // }
+
+}
+.loadimg{
+    background: url(../../assets/icon/lode.gif) no-repeat center!important;
+    background-size: 40% auto!important;
+    background-color: #eee!important;
+    border: none!important;
+}
+.cambox{background-position: center;background-repeat: no-repeat;background-size: cover}
+.filter{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .2);
+    position: relative;
+    img{width: 20px !important;height: 20px !important;;position: absolute;left: calc(50% - 10px);top: calc(50% - 10px )}
+}
+.delicon{color:#908e8d;font-size: 2rem;top: -8px;right: -6px;}
+
+}

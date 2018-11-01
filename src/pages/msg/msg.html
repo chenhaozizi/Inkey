@@ -1,0 +1,66 @@
+<!--
+  Generated template for the MsgPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar mode="ios">
+    <ion-buttons start *ngIf="isShowDeleteChoose&&delete_items.length==0" >
+      <button ion-button (click)="readAll()">
+        <small>全标已读</small>
+      </button>
+    </ion-buttons>
+    <ion-title>通知消息</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="cancelDel()" *ngIf="isShowDeleteChoose">
+        <small>取消</small>
+      </button>
+      <button ion-button (click)="deleteFuction()">
+        <ion-icon name="trash" *ngIf="isShowDeleteChoose"  ></ion-icon>
+        <ion-icon name="menu" *ngIf="!this.isShowDeleteChoose" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bgcolor">
+  <div class="mytabs">
+    <ion-grid style="background:#fff" full>
+      <ion-row style="flex-wrap:nowrap;overflow:auto">
+        <ion-col col *ngFor="let item of tabs,let i = index" (click)="checktab(i)" class="text-center " [ngClass]="{true:'active',false:''}[item.isSelect]">
+          {{item.key}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-list class="mt5">
+    <ion-item-sliding *ngFor="let item of item">
+      <ion-item no-line [navPush]=" !isShowDeleteChoose?msgInfoPage:'' " [navParams]="{'id':item.Id}">
+        <ion-checkbox checked="isChecked" (ionChange)="delete(item.Id)" *ngIf="isShowDeleteChoose"></ion-checkbox>
+        <h2 class="pos-rel" style="height:15px">最新{{tit}}<span class="pull-right color-8c r0">{{item.CreateTime}}</span></h2>
+        <p class="text-showell w95">{{item.Message}} <span class="spot pull-right" *ngIf="item.IsRead==false"></span></p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="warn" (click)="delMsg(item.Id)">
+          <ion-icon name="trash"></ion-icon>
+          <small>删除</small>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-card *ngIf="item.length==0">
+      <ion-card-content>
+        <p class="mt0 text-center color-8c  mb5 bgff">暂无相关消息。</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <p class=" text-center color-8c" *ngIf="hasmore">没有更多了</p>
+  <!-- 下拉刷新 -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 上拉刷新 -->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="circles" loadingText="数据加载中..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

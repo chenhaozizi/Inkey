@@ -1,0 +1,28 @@
+page-share {
+    .item{
+        .item{
+            border:none;
+            background-color:transparent; 
+        }
+        .row{
+            p{
+                :first-child{margin-right: 5px;}
+                b{color: $maincolor!important}
+            }
+            div{
+                display: flex;
+                border-radius: 5px;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 10vh;
+                overflow: hidden;
+            }
+        }
+    }
+    .list > .item-block:first-child{
+        border-top: none;
+    }
+    .hd{padding-left: 0px!important;}
+
+}

@@ -1,0 +1,129 @@
+<!--
+  Generated template for the CustomerInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar mode="ios">
+    <ion-title border-nb></ion-title>
+    <ion-buttons end (click)="changeRemark()">
+      <button ion-button icon-only>
+        <ion-icon name='create-outline'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bgcolor">
+  <ion-item class="toph text-center mt0 border-nb">
+    <div class="centeritem">
+      <div class="innerbox">
+        <ion-grid class="pt0 color-ff">
+          <ion-row class="pb0">
+            <ion-col class="pb0 pt0" col-12><img class="w18" src="{{cusarr.Logo}}" onError=" this.src='../../assets/imgs/header2.jpg' "></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 class="font-24  pt0 pb0">{{cusarr.Name}}  <span *ngIf="cusarr.Sex" class="sexspan"><img src="{{cusarr.Sex}}"></span></ion-col>
+          </ion-row>
+         <!-- color="red" -->
+          <ion-row>
+            <ion-col col-12 class="font-sm pd0 "><span (click)="changetype(2,cusarr.IsOrderClient)">&ensp;&ensp;老顾客： <ion-icon  *ngIf="cusarr.IsOrderClient==0" name='ios-star-outline' ></ion-icon><ion-icon  *ngIf="cusarr.IsOrderClient==1" name='star' color="red" ></ion-icon></span></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col  col-12 class="font-sm pd0 "> <span (click)="changetype(1,cusarr.Grade)">意向顾客：<ion-icon  *ngIf="cusarr.Grade==0" name='ios-star-outline' ></ion-icon><ion-icon  *ngIf="cusarr.Grade==1" name='star' class="color-yellow" ></ion-icon></span></ion-col>
+          </ion-row><ion-row>
+            <ion-col col-12 no-padding class="font-sm"><span>最后访问：{{cusarr.LastLoginTime}}</span></ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </ion-item>
+  <ion-list class="arrow mb10">
+      <ion-item class="mb0 border-nones border-b no-arrow" style="border:none !important" >
+          <ion-avatar item-left class="mb0">
+            <ion-icon name="ios-call-outline" class="border-icon"></ion-icon>
+          </ion-avatar>
+          <h2 class="color-403 font-md">电话号码：</h2>
+          <h2 item-right>{{cusarr.Phone ||'暂无'}}</h2>
+        </ion-item>
+    <ion-item class="mb10 border-nones" style="border:none !important" [navPush]="relation" [navParams]="{'id':id}">
+      <ion-avatar item-left class="mb0">
+        <ion-icon name="git-network" class="border-icon"></ion-icon>
+      </ion-avatar>
+      <h2 class="color-403 font-md">人脉关系链</h2>
+    </ion-item>
+    <ion-item class="no-arrow" style="border:none !important">
+      <ion-avatar item-left class="mb0">
+        <ion-icon name="ios-paw-outline" class="border-icon"></ion-icon>
+      </ion-avatar>
+      <h2 class="color-403 font-sm mb5 ">逛店次数：<span class="mancolor"> {{cusarr.BrowseQuantity}}</span></h2>
+      <h2 class="color-403 font-sm mb5">浏览页面：<span class="mancolor"> {{cusarr.BrowseQuantity}}</span></h2>
+    </ion-item>
+    <ion-item style="border:none !important" class="no-arrow">
+      <ion-avatar item-left class="mb0">
+        <ion-icon name="ios-send-outline" class="border-icon"></ion-icon>
+      </ion-avatar>
+      <h2 class="color-403 font-sm mb5">转发次数：<span class="mancolor">{{cusarr.Transmit}}</span></h2>
+      <h2 class="color-403 font-sm mb5">带来顾客：<span class="mancolor">{{cusarr.TransmitCustomer}}</span></h2>
+      <h2 class="color-403 font-sm">转发带来的浏览：<span class="mancolor">{{cusarr.TransmitBrowseQuantity}}</span></h2>
+    </ion-item>
+  </ion-list>
+  <div class="mytabs">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let item of tabs,let i = index" (click)="checktab(i)" class="text-center font-sm" [ngClass]="{true:'active',false:''}[item.isSelect]">
+          {{item.key}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <!-- 盈客圈 -->
+  <ion-list class="border-nt"  no-lines>
+    <div *ngIf="select==0">
+    <ion-list tabable class="border-nb mb5 arrow" *ngFor="let item of seegoodslist" [navPush]='GoodsDetailPage' tappable [navParams]="{'Id':item.GoodsId}" >
+      <ion-item class="border-nb" *ngIf="!type">
+        <ion-thumbnail item-start>
+          <img  src = "{{ip_src + item.GoodsImg}}" onError=' this.src="../../assets/imgs/shop01.jpg"'>
+        </ion-thumbnail>
+        <h2 class="color-403 text-showell mr20">{{item.GoodName}} </h2>
+        <h3 class="color-66 text-showell mr20">{{item.SpecDes}}</h3>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="select ==1">
+    <ion-list tabable class="border-nb mb5 arrow" *ngFor="let item of seeArticlist" [navPush]="shareinfoPage" tappable  [navParams]="{ 'id':item.ArticleId }">
+      <ion-item class="border-nb" *ngIf="!type">
+        <ion-thumbnail item-start>
+          <img  src = "{{item.ImagesPic[0]}}" onError=' this.src="../../assets/imgs/shop01.jpg"'>
+        </ion-thumbnail>
+        <h2 class="color-403 text-showell mr20">{{item.Title}} </h2>
+        <h3 class="color-66 text-showell mr20"></h3>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="select ==2">
+      <ion-list tabable class="border-nb mb5 arrow" *ngFor="let item of seeactivelist" [navPush]="acinfopage" tappable  [navParams]="{ 'Id':item.ActivityId }">
+        <ion-item class="border-nb" *ngIf="!type">
+          <ion-thumbnail item-start>
+            <img  src = "{{ip_src+item.Banner}}" onError=' this.src="../../assets/imgs/shop01.jpg"'>
+          </ion-thumbnail>
+          <h2 class="color-403 text-showell mr20">{{item.Title}} </h2>
+          <h3 class="color-66 text-showell mr20">{{item.Description}}</h3>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngIf="select==3">
+      <ion-list tabable class="border-nb mb5 arrow" *ngFor="let item of seecolllist" [navPush]='GoodsDetailPage'  tappable [navParams]="{'Id':item.GoodsId,isCollage:1}" >
+        <ion-item class="border-nb" *ngIf="!type">
+          <ion-thumbnail item-start>
+            <img  src = "{{ip_src + item.GoodsImg}}" onError=' this.src="../../assets/imgs/shop01.jpg"'>
+          </ion-thumbnail>
+          <h2 class="color-403 text-showell mr20">{{item.GoodsName}} </h2>
+          <h3 class="color-66 text-showell mr20">{{item.SpecDes}}</h3>
+        </ion-item>
+      </ion-list>
+    </div>
+    <p padding class="mt0 text-center color-8c  mb5 bgff " *ngIf="!seegoodslistlen">暂无相关信息</p>
+  <!-- 商品库 -->
+  </ion-list>
+</ion-content>

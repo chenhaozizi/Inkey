@@ -1,0 +1,97 @@
+
+page-home {
+  
+    .ion-page > ion-content,.content-ios{background-color: #f5f5f5 !important}
+    .border-nb{border-bottom: none}
+    .toph{height: 25vh;background: #00bc71 ;text-align: center; }
+    .w40{width: 40%}
+    .list-ios > .item-block:first-child,.border-nt{border-top:none}
+    .border-nb,.border-nb .item-inner{border-bottom: none !important}
+    .font-md{font-size:1.5rem}
+    .color-66{color: #666}
+    .color-403{color:#403e3e}
+    .mb10{margin-bottom: 10px}.mb0{margin-bottom: 0}
+    .item h2{font-size: 1.3rem !important}
+    .item h3{font-size: 1.2rem !important}
+    .fixedbtn{position: fixed;bottom: 5vh;width: 80%}
+    .centeritem{width: 14vh;height: 14vh;margin:0 auto}
+    .innerbox{width: 100%;border-radius: 100%;height: 100%;.imgbox{width: 100%;border: 2px solid #fff;overflow: hidden;border-radius: 100%;height: 100%;;background-size: cover !important}}
+    .font-24{font-size: 24px;} .color-r{color: rgb(250, 87, 68)}
+    .mr5{margin-right: 5px !important}
+    .font-sm{font-size: 12px;}
+    .paddingl{padding:  10px  16px 5px !important}
+    .bgblck{background: #00bc71 !important}
+    .pb0{padding-bottom:0 }.pd3{padding: 0px} 
+    .pr0>.item-inner{padding-right: 0 !important}
+    .couTitle{color:black}
+    .couContent{
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      color: red;
+      font-size: 2.5rem;
+      margin-bottom: 5px
+    }
+    .couRule{color:goldenrod;font-size: 1.5rem}
+    .couTime{color: gray;font-size: 1.3rem}
+    .btnGetCou{background-color: gold;border-radius: 2px;display: flex}
+    .btnRece{color: wheat;display: flex;flex-direction: column}
+    .btnLq{color:white;font-size: 2rem;text-align: center}
+    .remainingCount{font-size: 1.5rem;color: gray;}
+    .color-glod{color:goldenrod!important}
+    .mylogo{img{width: 22px;height: 22px;};top:23px}
+    .couponDD{border:none;}
+    .list-ios .item-block .item-inner{border: none}
+   
+    /*功能导航*/
+   #nav{
+    height:90px;
+    width:100%;
+    
+    background-color:#fff;
+    overflow:hidden;
+    box-shadow:0 1px 1px #ebebeb;
+  }
+   #nav span{
+    display:block;
+    float:left;
+    width:25%;
+    height:60px;
+    margin-top:16px;
+  }
+   #nav span img{
+    display:block;
+    width:36px;
+    height:36px;
+    margin:0px auto;
+  }
+   #nav span h2{
+    font-size:12px;
+    font-weight:300;
+    text-align:center;
+    margin-top: 10px;
+    color: #403e3e
+  }
+  .list{margin-bottom: 6px;}
+  .list > .item-block:first-child ,.list > .item-block:last-child{
+    border: none;
+}
+  .uerImg{width: 50px!important;height: 50px!important;border-radius: 50%!important;margin: 0 auto}
+  .user{padding-top:15px;padding-bottom: 15px;}
+  .poadiv{top: -15px;left: 0;}
+  .w100{width: 100%}
+  .my-btn{float: left;height: 30px !important;img{width:32px};width:70px;background: transparent;text-align: left}
+   
+.user .item-inner{background-image: none !important;border:none !important}}
+.button-ios.activated{background-color: transparent}
+// 最近访客
+.item ion-avatar[item-start].my-avatar{min-width: 30px;min-height: 30px;margin-right: 5px !important}
+.item ion-avatar[item-start].my-avatar img{width: 30px;height: 30px;}
+
+.point{
+  font-size: 1rem;
+  color: #ff4858!important;
+  float: right;
+}
+
+    

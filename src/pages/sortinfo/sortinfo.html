@@ -1,0 +1,37 @@
+
+<ion-header>
+  <ion-navbar mode="ios">
+      <ion-buttons start>
+          <button ion-button small (click)="changetitle(0)">
+            <small  [ngClass]="{'activee':state==0}">
+              <label style="margin-left:2px">本店</label>
+            </small>
+          </button>
+        </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button small (click)="changetitle(1)" *ngIf="isDG" >
+        <small  [ngClass]="{'activee':state==1}" >
+          <label>导购</label>
+        </small>
+      </button>
+      <button ion-button small (click)="changetitle(2)">
+          <small  [ngClass]="{'activee':state==2}">
+            <label style="margin-left:1px">门店</label>
+          </small>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bgcolor">
+  <div class="mytabs">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let item of tabs,let i = index" (click)="checktab(i)" class="text-center " [ngClass]="{true:'active',false:''}[item.isSelect]">
+          {{item.key}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <sort-list [prankingType]='prankingType'  [state]='state' [way]='way'></sort-list>
+</ion-content>

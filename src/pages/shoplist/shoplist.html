@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ShoplistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar mode="ios">
+    <ion-title>商品列表</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="bgcolor">
+    <div class="topsearch mb5 mt5">
+        <ion-searchbar class="bgcolor border-none" [(ngModel)]="keywords" placeholder="搜索" (ionChange)="search()" ></ion-searchbar>
+      </div>
+  <ion-list class="border-none bgff border-nt mb5 no-arrow  pos-rel"  *ngFor="let item of goodlist,let i = index" [navPush]='GoodsDetailPage' [navParams]="{'Id':item.Id}" >
+      <button no-border ion-item class="user pr0 pb0 border-none w80" >
+          <ion-avatar item-left>
+              
+                <img class="myimg" src="{{ip_src+item.GoodsImg}}"  />
+          </ion-avatar>
+          <h2 class="color-403 text-showell">{{item.GoodName}}</h2>
+          <p class="text-showell">{{item.SpecDes}}</p>
+          <!-- <p class="color-8c">活动时间：{{act.StartTime}} 至 {{act.EndTime}}</p> -->
+        </button>
+        <span  class="border-l lin52 pull-right sharebtn ">
+            <img class="mt8" src="../../assets/imgs/share.png">
+          </span>
+</ion-list>
+<p class=" text-center color-8c" *ngIf="hasmore">没有更多了</p>
+<p class="mt50 text-center color-8c" *ngIf="listlen <= 0">暂无相关信息</p>
+<!-- 
+  <ion-list class="border-nb border-nt  mb5 arrow">
+  <ion-item class="border-nb border-nt">
+    <ion-avatar item-start >
+      <img class="myimg" src="../../assets/imgs/shop02.jpg">
+    </ion-avatar>
+    <h2 class="color-403 text-showell mr20">[韩木居] 现代风格 至简撞色款 广西白大理石台面</h2>
+    <h3 class="color-66 text-showell mr20">五星级水曲柳臻品餐厅套装（1桌+6椅）</h3></ion-item>
+</ion-list>
+<ion-list class="border-nb border-nt  mb5 arrow">
+    <ion-item class="border-nb border-nt">
+      <ion-avatar item-start >
+        <img class="myimg" src="../../assets/imgs/shop03.jpg">
+      </ion-avatar>
+      <h2 class="color-403 text-showell mr20">[韩木居] 现代风格 至简撞色款 广西白大理石台面</h2>
+      <h3 class="color-66 text-showell mr20">五星级水曲柳臻品餐厅套装（1桌+6椅）</h3></ion-item>
+  </ion-list>
+ -->
+   <!-- 下拉刷新 -->
+   <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="">
+    </ion-refresher-content>
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 上拉刷新 -->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="circles" loadingText="数据加载中..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

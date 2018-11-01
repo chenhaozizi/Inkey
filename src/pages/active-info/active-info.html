@@ -1,0 +1,49 @@
+<!--
+  Generated template for the ActiveInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>活动详情</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bgcolor">
+  <div  id="cavas">
+  <div class="bgcl">
+    <div padding>
+      <h2 >{{activity.Title}}<span *ngIf="activity.IsDealerActivity" class="pos-rel" style="top:-3px;color: #ce1515;border:1px solid #ce1515;padding: 0.1rem; font-size: 1rem;border-radius: 4px;margin-left: 3px" >经销商</span></h2>
+      <ion-list [ngClass]="{true:'mb0',false:'mb80'}[ifshow]">
+        <p>{{activity.Description}}</p>
+        <div>
+          <img src="{{ip_src+activity.Banner }}" onError="this.src='../../assets/imgs/ac01.jpg'">
+        </div>
+       
+        <p  text-center class="color-8c">活动规则</p>
+        <p [innerHTML]="assembleHTML(activity.ActivityRule)"></p>
+        <div text-center>
+        <p class="color-8c">活动时间</p>
+        <p>{{activity.StartTime}} <span class="color-8c">至</span> {{activity.EndTime}} </p>
+        <p class="color-8c">活动地址</p>
+        <p *ngIf="activity.IsDealerActivity">所有门店都可参加 </p>
+        <p *ngIf="!activity.IsDealerActivity">{{activity.FullAddress || '暂无地址'}} </p>
+       </div>
+      </ion-list>
+    </div >
+    <div *ngIf="ifshow" class="text-center  pd10 mb80" style="border-top:1px solid #b7a5a5">
+        <img     src="{{wxcode}}"/>
+      </div>
+
+  </div>
+  
+</div>
+  <div class="fixbtn">
+      <button ion-button round full (click)="share($event)" color='maincolor'>
+          <ion-icon name="copy"></ion-icon>&nbsp;&nbsp;分享
+        </button>
+  </div>
+
+
+</ion-content>

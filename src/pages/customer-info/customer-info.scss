@@ -1,0 +1,12 @@
+page-customer-info {
+    .toph{height: 30vh;background:#00bc71;text-align: center; }
+    .w18{width: 18%;border-radius: 60%}
+    .sexspan{width: 13px;background: #fff;height: 13px;margin-right: 5px;display: inline-block;border-radius: 8px ; img{width: 8px}line-height: 10px}
+    .item ion-thumbnail ion-img, .item ion-thumbnail img{
+        width: 80px;
+        height: 60px;
+    }
+}
+.border-icon::before{padding: 3px;border:1px solid #eee}
+.item-block{min-height: 3rem}
+.border-nones.item-block .item-inner{border: none}

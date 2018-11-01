@@ -1,0 +1,54 @@
+<!--
+  Generated template for the RelationshipPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>人脉关系链</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="bgcolor">
+  <div class="topsearch mb5 mt5">
+    <ion-searchbar class="bgcolor border-none" [(ngModel)]="keywords" (ionChange)="keywordsc()"  placeholder="搜索下级"></ion-searchbar>
+  </div>
+  <div class="mytabs">
+    <ion-grid style="background:#fff" full>
+      <ion-row style="flex-wrap:nowrap;overflow:auto">
+        <ion-col col *ngFor="let item of tabs,let i = index" (click)="checktab(i)" class="text-center " [ngClass]="{true:'active',false:''}[item.isSelect]">
+          {{item.key}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-list>
+    <button ion-item *ngFor="let item of cusarr ,let i = index" [ngClass]="{true:'border-none',false:'xx' }[i == cusarr.length-1]">
+      <ion-avatar item-left [navPush]="item.UserType!==0?'':cusdetailPage" [navParams]="{'id':item.CustomerId || item.Id}">
+        <img class="" src="{{ip_src+item.Logo}}"  onError="this.src='../../assets/icon/user.jpg'"/>
+      </ion-avatar>
+      <h2 class="color-403 font-md">{{item.Name}}</h2>
+      <p class="color-8c font-xs" *ngIf="item.UserType==1"> {{item.StoreName}} · 导购</p>
+      <p class="color-8c font-xs" *ngIf="item.UserType==2"> {{item.StoreName}} · 店长</p>
+      <!-- <p class="color-8c font-xs" *ngIf="item.UserType==0"> {{item.SalesUserName}} · 逛店{{item.BrowseQuantity}} </p> -->
+      <ion-grid class="inblock text-right pr0" item-right (click)="getRelationship(item.Id,0)">
+        <ion-row>
+          <ion-col class="pb0 color-8c font-sm pr0 " col-12>{{item.lasettime}}</ion-col>
+        </ion-row>
+        <ion-row class="pos-rel smallrow">
+          <ion-col col-12 class="color-8c font-sm pd3 pr0 pos-ab r0">
+            <small *ngIf="item.IsOrderClient">
+              <ion-icon name='star' color="red"></ion-icon>
+            </small>
+            <small *ngIf="item.Grade">
+              <ion-icon name='star' class="color-y"></ion-icon>
+            </small>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </button>
+    <p *ngIf=" cusarr=='' " text-center>暂无数据...</p>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,33 @@
+<!--
+  Generated template for the CustomerAutoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>自然到店{{numAll}}</ion-title>
+    <ion-buttons end (click)="addCustomer()">
+      <button ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bgcolor">
+  <div class="topsearch mb5 mt5">
+    <ion-searchbar class="bgcolor border-none" [(ngModel)]="keywords" placeholder="搜索" (ionChange)="search()"></ion-searchbar>
+  </div>
+  <ion-list>
+    <!-- <customer-list [askType]="0"  [askState]='0'   [askStyle]="3" *ngIf="init==1" ></customer-list> -->
+    <customer-list [cusar]='cusar'></customer-list>
+  </ion-list>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingText="数据加载中..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

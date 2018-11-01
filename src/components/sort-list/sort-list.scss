@@ -1,0 +1,15 @@
+sort-list {
+ .self{color: red}
+ .myimg{
+     width: 80px!important;
+     height: 60px!important;
+ }
+ .activated{
+     background: #fff!important;
+
+ }
+    .item[detail-push] .item-inner, button.item:not([detail-none]) .item-inner, a.item:not([detail-none]) .item-inner{
+        padding-right: 0!important;
+    }
+
+}

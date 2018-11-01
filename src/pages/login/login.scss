@@ -1,0 +1,96 @@
+page-login {
+    //类名后面家－md的是针对Android端的样式
+    //例如.item-md等
+    ion-content{
+        text-align: center;
+        background:url(../../assets/imgs/bg.png) no-repeat center;
+        background-size: 100% 100%;
+    }
+    ion-icon{
+        
+        font-size: 26px;
+    }
+    form{
+        text-align:center;
+        margin: auto;
+        margin-top: 130px;
+    }
+    .has-focus{
+        border-bottom: none；
+    }
+    .item{
+        margin-top: 20px;
+        border:1px solid #cccccc;
+        border-radius: 5px;
+    }
+    .item:last-child{
+        margin-top: 0px;
+        border:0 !important;
+        color: 666;
+        font-size: 12px
+    }
+    div .input-wrapper{
+        // margin: 20px auto;
+        text-align:center;
+    }
+    .item.item-block .item-inner{
+        border: 0;
+    }
+    .input-cover {
+        position: static;
+    }
+    button{
+        width: 200px;
+        height: 40px !important; 
+    }
+
+    .item-md.item-input.item-input-has-focus .item-inner,
+    .item-md.item-input.input-has-focus .item-inner{
+        border-bottom: 0 !important;
+    }
+    .logo img{
+      margin-top: 8vh;
+      margin-bottom: 3vh;
+    //   margin-left: calc((100% - 25vh) /2);
+    //   width: 25vh;
+    }
+    .item{border:none;color: #fff;text-align: center}
+    .item{
+        background-color:transparent;
+        margin-left: 7.5%;
+        padding-left: 0;
+    }
+    .input-wrapper{
+       border-bottom: 1px solid #7d7b7b;
+       color: white  
+    }
+    .text-input{
+        background-color: transparent
+    }
+    .loginBtn{
+       border-radius: 0;
+       margin-top: 2vh;
+       height: 45px!important;
+       color:#fff;
+       background: rgba(0,188,113,.8);
+       border-radius: 27px
+    }
+    .fooer{
+        text-align: center;
+        border: none;
+        color: #fff;
+        a{color: #fff;text-decoration: none}
+        .input-wrapper{
+            border-bottom: none!important;
+        }
+    }
+    ion-icon{color: #bdb7b7}
+    .label{margin: 0}
+    .item.item-block .item-inner{
+        padding-right: 0px
+    }
+
+     
+}
+
+

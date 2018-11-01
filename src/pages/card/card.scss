@@ -1,0 +1,48 @@
+
+page-card {
+    .scroll-content{background:#00bc71;}
+    ion-card {text-align: center}
+    ion-card img{
+        width: 25vh;
+        height: 25vh;    
+    }
+    .ewm{
+        width: 25vh;
+        height: 25vh;  
+     
+    }
+    .item h2.useName{margin-top: 5px !important;font-size: 18px!important}
+    .item p{font-size: 15px!important;}
+    .item{background: none;text-align: center}
+    .item .addr{
+        white-space:normal;
+    }
+    .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 68vh;
+        margin-top: 2vh;
+        border-radius: 10px;
+        overflow: visible
+    }
+    .useImg{
+        width: 35px;
+        height: 35px;
+        margin-top: 2vh;
+        border-radius: 50%;
+        margin-bottom: 2vh;
+    }
+    .wx{
+        width: auto!important;
+        height: 18.75vh!important;
+    }
+    .item.item-block .item-inner{
+        border: none
+    }
+    p{padding: 1px 0;color: #666}
+    .card{border:  1px solid #6f8a75}
+    
+
+}

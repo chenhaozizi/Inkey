@@ -1,0 +1,172 @@
+<!--
+  Generated template for the ShopdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar color="top">
+    <ion-title border-nb>首页</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- (ionScroll)="scrollEvent($event)" -->
+<ion-content class="bgcolor">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="" refreshingSpinner="circles" refreshingText="">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 顶部大板块 -->
+  <ion-item class="toph text-center mt0 border-nb">
+    <div padding class="pos-ab w100 poadiv pl0">
+      <!-- <button ion-button icon-only full="false" class="my-btn ">
+        <ion-icon class="pull-right color-ff" style="font-size:3.8rem" name="ios-settings-outline"></ion-icon>
+      </button> -->
+      <ion-icon class="pull-right color-ff" style="font-size:3.8rem" name="mail" [navPush]="msgPage">
+        <span *ngIf="msgNum!==0" class="point">●</span>
+      </ion-icon>
+      <!-- <span class="pull-right"><img style="width:30px" src="../../assets/imgs/msg.png"></span> -->
+    </div>
+    <div>
+      <div class="centeritem" [navPush]="cardPage">
+        <div class="innerbox">
+          <div class="imgbox"  [ngStyle]="{'background': 'url('+userInfo.Logo+') no-repeat center'}" >
+            <img *ngIf="!userInfo.Logo" src="../../assets/imgs/header2.jpg" onError="this.src='../../assets/imgs/header2.jpg'">
+          </div>
+        </div>
+      </div>
+      <h3 class="color-ff m10" style="font-size:1.7rem !important">{{username}}</h3>
+    </div>
+  </ion-item>
+  <!-- 最近访客 -->
+  <ion-list class=" bgblck mb0">
+    <ion-list class="border-nb mb0  text-showell pos-rel">
+      <ion-grid class="pt0 pb0">
+        <ion-row style="border-top:1px solid #83d0b1 !important">
+          <ion-col col-9 class="pt0 pb0">
+            <p padding-left no-margin padding class="font-sm paddingl color-ff ">最近访客</p>
+            <ion-item class="border-nb smallimg bgblck ">
+              <ion-avatar *ngFor="let item of browlist,let i = index" [navPush]="customersPage" [navParams]="{'title':'最近访客','num':5}"
+                item-start class="mr5 my-avatar">
+                <img src="{{item.CutomerLogo}}" onError="this.src='../../assets/imgs/he3.jpg'">
+
+                <!-- <img src="../../assets/imgs/he3.jpg"> -->
+              </ion-avatar>
+              <span *ngIf="browlist.length==0" class="font-sm color-ff">暂无访客...</span>
+              <ion-icon class="color-ff font-22 pull-right" [navPush]="customersPage" [navParams]="{'title':'最近访客','num':5}"
+                name="more"></ion-icon>
+            </ion-item>
+          </ion-col>
+          <ion-col class="text-center pt0 pb0" col-3 [navPush]="orderPage">
+            <span class="border-l mt10    " style="display:block;padding:5px 0 ;border-left:1px solid #83d0b1 !important">
+              <h2 class="color-ff font-sm  mb5 mt0">订单</h2>
+              <img src="../../assets/icon/order.png">
+              <!-- <ion-icon class="color-ff" name="dingdan" style="font-size:2.6rem" item-left ></ion-icon> -->
+            </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+    </ion-list>
+  </ion-list>
+  <!-- 快捷菜单栏 -->
+  <nav id="nav" class="mb10">
+    <span [navPush]="ShopdetailPage" [navParams]="">
+      <img src="../../assets/imgs/icon1.png" alt="">
+      <h2>门店</h2>
+    </span>
+    <span [navPush]="cardPage">
+      <img src="../../assets/imgs/icon2.png" alt="">
+      <h2>名片</h2>
+    </span>
+    <span [navPush]="sortPage">
+      <img src="../../assets/imgs/icon3.png" alt="">
+      <h2>排名</h2>
+    </span>
+    <span [navPush]='sharerecordPage'>
+      <img src="../../assets/imgs/icon4.png" alt="">
+      <h2>分享记录</h2>
+    </span>
+  </nav>
+  <!-- 商品库 -->
+  <ion-list class="border-nt mb10">
+    <div>
+      <ion-item class=" font-md mb1 mt5 border-b">
+        商品库
+        <span [navPush]="shoplistpage" class="pull-right  color-8c font-sm">更多</span>
+      </ion-item>
+      <div>
+
+        <ion-list [navPush]='GoodsDetailPage' [navParams]="{'Id':item.Id}" class="border-none bgff border-nt mb5 no-arrow  pos-rel"
+          *ngFor="let item of goodlist ,let i = index">
+          <button no-border ion-item class="user pr0 pb0 border-none w80">
+            <ion-avatar item-left>
+              <img class="myimg" src="{{ip_src+item.GoodsImg}}" onError="this.src='../../assets/imgs/shop01.jpg'" />
+            </ion-avatar>
+            <h2 class="color-403 text-showell">{{item.GoodName}}</h2>
+            <p class="text-showell">{{item.SpecDes}}</p>
+          </button>
+          <span class="border-l lin52 pull-right sharebtn ">
+            <img class="mt15" src="../../assets/imgs/share.png">
+          </span>
+        </ion-list>
+        <p padding class="mt0 text-center color-8c  mb5 bgff" *ngIf="goodslen <= 0">暂无相关信息</p>
+      </div>
+    </div>
+  </ion-list>
+  <!-- 本店活动 -->
+  <ion-list class="border-nt mb10">
+    <div>
+      <ion-item class=" font-md  mb1 mt5 border-b">
+        促销活动
+        <span [navPush]="activepage" class="pull-right   color-8c font-sm">更多</span>
+      </ion-item>
+      <ion-list *ngFor="let act of activity,let i = index" class="no-arrow  pos-rel bgff" id="{{act.Id}}" [navPush]="acinfopage"
+        [navParams]="{'Id':act.Id}">
+        <button ion-item class="user pb0 w80 pr0">
+          <ion-avatar item-left>
+            <span *ngIf="act.IsDealerActivity" class="pos-ab mylogo"><img src="../../assets/imgs/21.png"></span>
+            <img class="myimg" src="{{ip_src+act.Banner}}" onError="this.src='../../assets/imgs/ac02.png'" />
+          </ion-avatar>
+          <h2 class="color-403 text-showell">{{act.Title}} </h2>
+          <p class="color-8c">{{act.Description}}</p>
+        </button>
+        <span class="border-l pull-right sharebtn ">
+          <img class="mt15" src="../../assets/imgs/share.png">
+        </span>
+      </ion-list>
+      <p padding class="mt0 text-center color-8c  mb5 bgff" *ngIf="activelen <= 0">暂无相关信息</p>
+    </div>
+  </ion-list>
+  <!--优惠券-->
+  <ion-list class="border-nt mb10">
+    <div>
+      <ion-item class="font-md mb1 mt5 border-b">
+        优惠券
+        <span [navPush]="couponlistpage" class="pull-right color-8c font-sm">更多</span>
+      </ion-item>
+      <ion-list [navPush]="coupondetailpage" [navParams]="{'couponItem':coup}" class="no-arrow pos-rel bgff" style="display:flex;"
+        *ngFor="let coup of coupons,let i = index">
+          <button ion-item class="couponDD" style="width: 88%">
+            <div class="couponClass">
+              <!-- <div class="couTitle">{{coup.Title}}</div> -->
+              <div class="couContent">
+                <span>￥{{coup.NominalValue}}</span>
+                <span class="remainingCount">仅剩:<span class="color-glod">{{coup.Total-coup.ReceivedQuantity}}</span>张</span>
+              </div>
+              <div>
+                <span class="couRule" *ngIf="coup.UseMinMoney!=null">{{coup.Describe}}</span>
+                <span class="couRule" *ngIf="coup.UseMinMoney==null">无门槛直接使用</span>
+              </div>
+              <div class="couTime">有效期:{{coup.StartTime}}  至  {{coup.EndTime}} </div>
+            </div>
+          </button>
+          <span class="border-l pull-right sharebtn ">
+            <img class="mt20" src="../../assets/imgs/share.png">
+          </span>
+      </ion-list>
+      <p padding class="mt0 text-center color-8c  mb5 bgff" *ngIf="couponslen <= 0">暂无相关信息</p>
+    </div>
+  </ion-list>
+</ion-content>
